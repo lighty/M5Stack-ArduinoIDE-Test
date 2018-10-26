@@ -1,5 +1,8 @@
 #include <M5Stack.h>
 
+unsigned int num1 = 0;
+unsigned int num2 = 0;
+
 void setup(void) {
   M5.begin();
   M5.Lcd.fillScreen(TFT_BLACK);
@@ -8,11 +11,11 @@ void setup(void) {
 
 void loop() {
   if (M5.BtnA.wasPressed()) {
-    String num1 = String(random(10));
-    String num2 = String(random(10));
+    num1 = random(10);
+    num2 = random(10);
     M5.Lcd.setTextColor(TFT_WHITE, TFT_BLACK);
     M5.Lcd.setTextDatum(MC_DATUM);
-    M5.Lcd.drawString(num1+" x "+num2, 160, 120, 4); // サイズが5以上だと表示されない
+    M5.Lcd.drawString(String(num1)+" x "+String(num2), 160, 120, 4); // サイズが5以上だと表示されない
   }
   M5.update();
 }
