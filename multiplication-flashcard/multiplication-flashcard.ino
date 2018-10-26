@@ -21,7 +21,8 @@ void loop() {
   }
   if (M5.BtnB.wasPressed()) {
     M5.Lcd.fillScreen(TFT_BLACK);
-    M5.Lcd.drawString(String(num1 * num2), 160, 120, 6);
+    M5.Lcd.drawString(String(num1) + " x " + String(num2), 160, 80, 4);
+    M5.Lcd.drawString(String(num1 * num2), 160, 160, 8);
   }
   M5.update();
 }
