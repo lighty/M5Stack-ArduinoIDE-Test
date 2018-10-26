@@ -8,11 +8,11 @@ void setup(void) {
 
 void loop() {
   if (M5.BtnA.wasPressed()) {
-    int num1 = random(10);
-    int num2 = random(10);
+    String num1 = String(random(10));
+    String num2 = String(random(10));
     M5.Lcd.setTextColor(TFT_WHITE, TFT_BLACK);
     M5.Lcd.setTextDatum(MC_DATUM);
-    M5.Lcd.drawNumber(num1, 160, 120, 8);
+    M5.Lcd.drawString(num1+" x "+num2, 160, 120, 4); // サイズが5以上だと表示されない
   }
   M5.update();
 }
